@@ -230,10 +230,12 @@
   <nav>
     <div class="nav-brand">MLB Analysis</div>
     <ul class="nav-links">
-      <li><a href="#" onclick="showTab('overview'); return false;" id="nav-overview" class="nav-link active">Overview & Background</a></li>
+      <li><a href="#" onclick="showTab('overview'); return false;" id="nav-overview" class="nav-link active">Overview</a></li>
+      <li><a href="#" onclick="showTab('background'); return false;" id="nav-overview" class="nav-link active">Background Information</a></li>
       <li><a href="#" onclick="showTab('clusters'); return false;" id="nav-clusters" class="nav-link">Cluster Analysis</a></li>
       <li><a href="#" onclick="showTab('performance'); return false;" id="nav-performance" class="nav-link">Performance</a></li>
       <li><a href="#" onclick="showTab('stats'); return false;" id="nav-stats" class="nav-link">Statistical Analysis</a></li>
+      <li><a href="#" onclick="showTab('about'); return false;" id="nav-stats" class="nav-link">About Me</a></li>
     </ul>
   </nav>
 
@@ -244,7 +246,7 @@
       <div class="hero-eyebrow">Thesis Research · 2015–2024</div>
       <h1>MLB Payroll & <span>Performance</span> Analysis</h1>
       <p class="hero-sub">
-        Examining how positional spending habits correlate with team <a href="#" onclick="showTab('stats', 'stat-war'); return false;" class="tab-link">WAR</a>
+        Examining how positional spending habits correlate with team WAR
         and win totals across a 10-year sample of all 30 MLB franchises.
       </p>
       <div class="hero-meta">
@@ -253,9 +255,46 @@
         <div class="hero-meta-item"><span class="value">3,501</span><span class="label">Observations</span></div>
         <div class="hero-meta-item"><span class="value">4</span><span class="label">Clusters</span></div>
       </div>
-    </div>
 
-    <div class="divider"></div>
+      <!-- Profile + body text row -->
+      <div style="display: flex; align-items: flex-start; gap: 32px; margin-top: 48px; text-align: left;">
+        
+        <!-- Left: profile card -->
+        <div style="display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+          <img src="headshot.jpg" alt="Ryan St.Clair"
+              style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover;
+                      border: 3px solid #1e3a5f; margin-bottom: 12px;">
+          <div style="font-size: 15px; font-weight: 600; color: #0f172a;">Ryan St.Clair</div>
+          <div style="font-size: 13px; color: #64748b;">University of South Carolina Graduate</div>
+        </div>
+
+        <!-- Right: body text -->
+        <div style="flex: 1;">
+          <p style="font-size: 15px; color: #64748b; line-height: 1.75; margin-bottom: 1rem;">
+            For my Senior Thesis project, I have investigated an issue within baseball that is becoming ever-more present in today's game. 
+            Payroll Disparity. I knew since entering school that I wanted to complete a baseball related project for this thesis requirement,
+            and payroll disparity in baseball was at the front and center of the sports media landscape at the time of me choosing my topic.
+          </p>
+          <p style="font-size: 15px; color: #64748b; line-height: 1.75;margin-bottom: 1rem;">
+            This analysis investigates how teams can be more efficient when allocating payroll, in an effort to provide a blueprint of success 
+            for small market teams to follow. WAR from each team was aggregated by position for every season between 2015 and 2024. This made
+            for easy comparison between positional groups when completing analysis. Additionally, salary figures for players on an indivudal level
+            were also compiled, to create payroll figures. Incorporating payroll was crucial. This painted a picture of which teams were buying WAR
+            with excessive spending, versus creating WAR due to efficient player development processes. 
+          </p>
+          <p style="font-size: 15px; color: #64748b; line-height: 1.75;">
+            Start with the background information tab to understand the current landscape of the league at a high level. Toggle
+            to the cluster analysis and performance tabs to view deep dives in this data.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- ── end tab-overview ─────────────────────────────────────── -->
+
+  <!-- ── Background Tab ─────────────────────────────────────────── -->
+  <div id="tab-background" class="tab-panel active">
 
     <section id="background-info">
       <div class="section-label">Contextual Information</div>
@@ -312,7 +351,7 @@
     </section>
 
   </div>
-  <!-- ── end tab-overview ─────────────────────────────────────── -->
+  <!-- ── end tab-background ─────────────────────────────────────── -->
 
   <!-- ── Cluster Tab ──────────────────────────────────────────── -->
   <div id="tab-clusters" class="tab-panel">
@@ -401,7 +440,7 @@
             </li>
             <li>
               <span class = "tooltip-wrap" data-tip = "Similar to Pittsburgh, LAA and COL have been bogged down by large contracts for bats that haven't worked out, with
-                  minimal prospect development. Because of this, they have not been able to see otusized returns on WAR per dollar spent.
+                  minimal prospect development. Because of this, they have not been able to see outsized returns on WAR per dollar spent.
                   Less spending on starting pitching compared to other clusters shows front office oversight. With both teams playing in 
                   hitters parks, organizations should be focused on bringing in quality starting pitching to mitigate park factors 
                   that boost offensive production.">The Angels and Rockies spend sporadically on offense, which is not conducive to a winning strategy.</span>
@@ -778,7 +817,7 @@
       <p class="section-desc">To determine which positions were most efficient at impacting winning percentage, a regression was utilized in which total 
         payroll is controlled. This structure explicitly displays which positions have the greatest impact on winning percentage with each marginal increase 
         in WAR. The results of this regression are fascinating. To start, after controlling for war (measuring payrolls sole impact on winning percentage), 
-        payroll was rendered insignificant. Accumulating WAR is much more crucial than spending excessively in an attempt to buy the best players. Roster 
+        payroll was rendered insignificant. Accumulating WAR is muc                                                                                    h more crucial than spending excessively in an attempt to buy the best players. Roster 
         construction efficiency to extract maximum WAR is most important when trying to win games. This is illustrated perfectly by cluster 3. Teams in 
         cluster 3 spend on average $20M less in payroll each year than teams in cluster 1,  and $9.5M less than teams in cluster 5, and win on average 
         2.8% more and 3.8% more games, respectively. 
@@ -820,6 +859,44 @@
 
   </div>
   <!-- ── end tab-statistical analysis ──────────────────────────────────── -->
+
+  <!-- ── About Me Tab ──────────────────────────────────── -->
+
+  <div id="tab-about" class="tab-panel">
+    <section id="stat-war">
+      <div style="display: flex; align-items: flex-start; gap: 32px; margin-top: 48px; text-align: left;">
+            
+        <!-- Left: profile card -->
+        <div style="display: flex; flex-direction: column; align-items: center; flex-shrink: 0;">
+          <img src="headshot.jpg" alt="Ryan St.Clair"
+              style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover;
+                      border: 3px solid #1e3a5f; margin-bottom: 12px; margin-left: 50px">
+          <div style="font-size: 15px; font-weight: 600; color: #0f172a; margin-left: 50px">Ryan St.Clair</div>
+          <div style="font-size: 13px; color: #64748b; margin-left: 50px">University of South Carolina Graduate</div>
+        </div>
+
+        <!-- Right: body text -->
+        <div style="flex: 1;">
+          <div class="section-title">Contact Information</div>
+          <a href="https://www.linkedin.com/in/ryan-stclair/" target="_blank" rel="noopener noreferrer" class="tab-link">LinkedIn</a>
+          <br>
+          <a href="https://github.com/ryangsaint/mlb-thesis-analysis" target="_blank" rel="noopener noreferrer" class="tab-link">GitHub Page</a>
+          <br>
+          <p style="font-size: 15px; color: #64748b; line-height: 1.75;margin-bottom: 1rem">
+            Email Address: ryangsaint@gmail.com
+          </p>
+          <p style="font-size: 15px; color: #64748b; line-height: 1.75;margin-bottom: 1rem">
+            Phone Number: (732) 546-4479
+          </p>
+          <p style="font-size: 15px; color: #64748b; line-height: 1.75;">
+            The goal of this project was to serve as a proof of concept for future professional projects of this nature. I am aiming to forge a career in baseball,
+            and this project will serve as support for my ability to excel in this space. If you have any questions regarding the project, or feedback in general,
+            please reach out using the listed contact information. 
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
 
   <footer>
     MLB Payroll & Performance Analysis · Thesis Research ·
